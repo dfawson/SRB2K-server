@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-import random
 
 class sonic_bot(commands.Bot):
     
