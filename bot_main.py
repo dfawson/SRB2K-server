@@ -16,6 +16,7 @@ def main():
     bot.add_cog(music_player(bot))
     bot.add_cog(main_cog(bot))
 
+    print()
     bot.run(token)
 
 if __name__ == '__main__':

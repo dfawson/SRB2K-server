@@ -1,5 +1,6 @@
 import discord, random, asyncio, os
 from discord.ext import commands
+from pydoc import plain
 
 class main_cog(commands.Cog, name='Main module'):
     def __init__(self,bot):
@@ -62,20 +63,19 @@ class music_player(commands.Cog, name='music player module'):
             shuffle_list = self.playlists[arg1]
             random.shuffle(shuffle_list)
             for item in shuffle_list:
-                self.queue.append('{0}/srb2k_bot/playlists/{1}/{2}.mp3'.format(self.dir,arg1,item))
-                print('{0}/srb2k_bot/playlists/{1}/{2}.mp3'.format(self.dir,arg1,item))
+                self.queue.append('SRB2K-server/srb2k_bot/playlists/{0}/{1}.mp3'.format(arg1,item))
         elif arg2 not in self.playlists[arg1]:
             await ctx.send("I don't know that song.")
             return
         else:
-            self.queue.append('{0}/srb2k_bot/playlists/{1}/{2}.mp3'.format(self.dir,arg1,item))
-            print('{0}/srb2k_bot/playlists/{1}/{2}.mp3'.format(self.dir,arg1,item))
+            self.queue.append('SRB2K-server/srb2k_bot/playlists/{0}/{1}.mp3'.format(arg1,item))
         
         voice_channel = ctx.author.voice.channel
         print(voice_channel)
         if self.vc == None:
             self.vc = await voice_channel.connect()
             while len(self.queue) > 0:
+                print(self.queue[0])
                 audio_source = discord.FFmpegPCMAudio(self.queue[0])
                 self.vc.play(audio_source)
                 while self.vc.is_playing() or self.vc.is_paused():
