@@ -63,11 +63,13 @@ class music_player(commands.Cog, name='music player module'):
             random.shuffle(shuffle_list)
             for item in shuffle_list:
                 self.queue.append('{0}/srb2k_bot/playlists/{1}/{2}.mp3'.format(self.dir,arg1,item))
+                print('{0}/srb2k_bot/playlists/{1}/{2}.mp3'.format(self.dir,arg1,item))
         elif arg2 not in self.playlists[arg1]:
             await ctx.send("I don't know that song.")
             return
         else:
             self.queue.append('{0}/srb2k_bot/playlists/{1}/{2}.mp3'.format(self.dir,arg1,item))
+            print('{0}/srb2k_bot/playlists/{1}/{2}.mp3'.format(self.dir,arg1,item))
         
         voice_channel = ctx.author.voice.channel
         print(voice_channel)
