@@ -67,7 +67,7 @@ class music_player(commands.Cog, name='music player module'):
             await ctx.send("I don't know that song.")
             return
         else:
-            self.queue.append('/home/pi/SRB2K-server/srb2k_bot/playlists/{0}/{1}.mp3'.format(arg1,item))
+            self.queue.append('/home/pi/SRB2K-server/srb2k_bot/playlists/{0}/{1}.mp3'.format(arg1,arg2))
         
         voice_channel = ctx.author.voice.channel
         print(voice_channel)

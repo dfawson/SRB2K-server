@@ -54,4 +54,4 @@ coverage.xml
 docs/_build/
 
 #cuz this stupid thing won't stop
-srb2k_bot/__pycache__/cogs.cpython-38.pyc
+srb2k_bot/__pycache__/
